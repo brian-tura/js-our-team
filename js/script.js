@@ -36,3 +36,23 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+function showMember(member){
+    const card = `<div class="col-12 col-md-6 col-lg-4 mt-3">
+                    <div class="bg-primary d-flex align-items-center">
+                        <div>
+                            <img class="img-fluid" src="${member.img}" alt="">
+                        </div>
+                        <div class="p-2 d-flex flex-column">
+                            <h3>${member.name}</h3>
+                            <p>${member.role}</p>
+                            <a href="">${member.email}</a>
+                        </div>
+                    </div>
+                </div>`;
+    document.getElementById('members').innerHTML += card;
+}
+
+for(let i=0; i<teamMembers.length; i++){
+    showMember(teamMembers[i]);
+}
